@@ -1,0 +1,208 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Responsive Image Gallery</title>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"> 
+        <meta name="description" content="Responsive Image Gallery with jQuery" />
+        <meta name="keywords" content="jquery, carousel, image gallery, slider, responsive, flexible, fluid, resize, css3" />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="../favicon.ico"> 
+        <link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<link rel="stylesheet" type="text/css" href="css/elastislide.css" />
+		<link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow&v1' rel='stylesheet' type='text/css' />
+		<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css' />
+		<noscript>
+			<style>
+				.es-carousel ul{
+					display:block;
+				}
+			</style>
+		</noscript>
+		<script id="img-wrapper-tmpl" type="text/x-jquery-tmpl">	
+			<div class="rg-image-wrapper">
+				{{if itemsCount > 1}}
+					<div class="rg-image-nav">
+						<a href="#" class="rg-image-nav-prev">Previous Image</a>
+						<a href="#" class="rg-image-nav-next">Next Image</a>
+					</div>
+				{{/if}}
+				<div class="rg-image"></div>
+				<div class="rg-loading"></div>
+				<div class="rg-caption-wrapper">
+					<div class="rg-caption" style="display:none;">
+						<p></p>
+					</div>
+				</div>
+			</div>
+		</script>
+
+        <script>
+            function infiniteLoop() {
+
+                var tid = setInterval(mycode, 10000);
+                function mycode() {
+                    $('.rg-image-nav-next').click() // click the next button
+                }
+                function abortTimer() { // to be called when you want to stop the timer
+                    clearInterval(tid);
+                }
+            }
+        </script>
+
+
+</head>
+    <body>
+		<div class="container">
+			<!--<div class="header">
+				<a href="http://tympanus.net/Development/Elastislide/"><span>&laquo; Previous Demo: </span>Elastislide</a>
+				<span class="right_ab">
+					<a href="http://www.flickr.com/photos/smanography/" target="_blank">Images by Shermeee</a>
+					<a href="http://creativecommons.org/licenses/by/2.0/deed.en_GB">CC BY 2.0</a>
+					<a href="http://tympanus.net/codrops/2011/09/20/responsive-image-gallery/"><strong>back to the Codrops post</strong></a>
+				</span>
+				<div class="clr"></div>
+			</div>--> 
+			
+			<div id="logop" class="content" >
+				<!--<h1>Responsive Image Gallery <span>A jQuery image gallery with a thumbnail carousel</span></h1>-->
+                <img src="images/pluspetrol.png" data-large="images/01.jpg" alt="image01" data-description="" style="height:60px" /></a>
+				<div id="rg-gallery" class="rg-gallery">
+					<div class="rg-thumbs">
+						<!-- Elastislide Carousel Thumbnail Viewer -->
+						<div class="es-carousel-wrapper">
+							<div class="es-nav">
+								<span class="es-nav-prev">Previous</span>
+								<span class="es-nav-next">Next</span>
+							</div>
+							<div class="es-carousel">
+								<ul>
+
+                                    <--Imagenes fijas-->
+                                    <li><a href="#"><img src="images/01.jpg" data-large="images/01.jpg" alt="image01" data-description="" /></a></li>
+                                    <li><a href="#"><img src="images/02.jpg" data-large="images/02.jpg" alt="image02" data-description="" /></a></li>
+                                    <li><a href="#"><img src="images/03.jpg" data-large="images/03.jpg" alt="image03" data-description="" /></a></li>
+                                    <li><a href="#"><img src="images/_04.jpg" data-large="images/04.jpg" alt="image04" data-description="" /></a></li>
+                                    <li><a href="#"><img src="images/05.jpg" data-large="images/05.jpg" alt="image05" data-description="" /></a></li>
+                                    <li><a href="#"><img src="images/06.jpg" data-large="images/06.jpg" alt="image06" data-description="" /></a></li>
+                                    <li><a href="#"><img src="images/07.jpg" data-large="images/07.jpg" alt="image07" data-description="" /></a></li>
+                                    <li><a href="#"><img src="images/08.jpg" data-large="images/08.jpg" alt="image08" data-description="" /></a></li>
+                                    <li><a href="#"><img src="images/09.jpg" data-large="images/09.jpg" alt="image09" data-description="" /></a></li>
+                                    <li><a href="#"><img src="images/10.jpg" data-large="images/10.jpg" alt="image10" data-description="" /></a></li>
+                                    <li><a href="#"><img src="images/11.jpg" data-large="images/11.jpg" alt="image11" data-description="" /></a></li>
+                                    <li><a href="#"><img src="images/12.jpg" data-large="images/12.jpg" alt="image12" data-description="" /></a></li>
+                                    <li><a href="#"><img src="images/13.jpg" data-large="images/13.jpg" alt="image13" data-description="" /></a></li>
+                                    <li><a href="#"><img src="images/14.jpg" data-large="images/14.jpg" alt="image14" data-description="" /></a></li>
+                                    <li><a href="#"><img src="images/15.jpg" data-large="images/15.jpg" alt="image15" data-description="" /></a></li>
+                                    <li><a href="#"><img src="images/16.jpg" data-large="images/16.jpg" alt="image16" data-description="" /></a></li>
+                                    <li><a href="#"><img src="images/17.jpg" data-large="images/17.jpg" alt="image17" data-description="" /></a></li>
+                                    <li><a href="#"><img src="images/18.jpg" data-large="images/18.jpg" alt="image18" data-description="" /></a></li>
+                                    <li><a href="#"><img src="images/19.jpg" data-large="images/19.jpg" alt="image19" data-description="" /></a></li>
+                                    <li><a href="#"><img src="images/20.jpg" data-large="images/20.jpg" alt="image20" data-description="" /></a></li>
+
+
+                                        <--Imagenes fijas-->
+                                            <li><a href="#"><img src="images/out_01.jpg" data-large="images/out_01.jpg" alt="image01" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_02.jpg" data-large="images/out_02.jpg" alt="image02" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_03.jpg" data-large="images/out_03.jpg" alt="image03" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_04.jpg" data-large="images/out_04.jpg" alt="image04" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_05.jpg" data-large="images/out_05.jpg" alt="image05" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_06.jpg" data-large="images/out_06.jpg" alt="image06" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_07.jpg" data-large="images/out_07.jpg" alt="image07" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_08.jpg" data-large="images/out_08.jpg" alt="image08" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_09.jpg" data-large="images/out_09.jpg" alt="image09" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_10.jpg" data-large="images/out_10.jpg" alt="image10" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_11.jpg" data-large="images/out_11.jpg" alt="image11" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_12.jpg" data-large="images/out_12.jpg" alt="image12" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_13.jpg" data-large="images/out_13.jpg" alt="image13" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_14.jpg" data-large="images/out_14.jpg" alt="image14" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_15.jpg" data-large="images/out_15.jpg" alt="image15" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_16.jpg" data-large="images/out_16.jpg" alt="image16" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_17.jpg" data-large="images/out_17.jpg" alt="image17" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_18.jpg" data-large="images/out_18.jpg" alt="image18" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_19.jpg" data-large="images/out_19.jpg" alt="image19" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_20.jpg" data-large="images/out_20.jpg" alt="image20" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_21.jpg" data-large="images/out_21.jpg" alt="image21" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_22.jpg" data-large="images/out_22.jpg" alt="image22" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_23.jpg" data-large="images/out_23.jpg" alt="image23" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_24.jpg" data-large="images/out_24.jpg" alt="image24" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_25.jpg" data-large="images/out_25.jpg" alt="image25" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_26.jpg" data-large="images/out_26.jpg" alt="image26" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_27.jpg" data-large="images/out_27.jpg" alt="image27" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_28.jpg" data-large="images/out_28.jpg" alt="image28" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_29.jpg" data-large="images/out_29.jpg" alt="image29" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_30.jpg" data-large="images/out_30.jpg" alt="image30" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_31.jpg" data-large="images/out_31.jpg" alt="image31" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_32.jpg" data-large="images/out_32.jpg" alt="image32" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_33.jpg" data-large="images/out_33.jpg" alt="image33" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_34.jpg" data-large="images/out_34.jpg" alt="image34" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_35.jpg" data-large="images/out_35.jpg" alt="image35" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_36.jpg" data-large="images/out_36.jpg" alt="image36" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_37.jpg" data-large="images/out_37.jpg" alt="image37" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_38.jpg" data-large="images/out_38.jpg" alt="image38" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_39.jpg" data-large="images/out_39.jpg" alt="image39" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_40.jpg" data-large="images/out_40.jpg" alt="image40" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_41.jpg" data-large="images/out_41.jpg" alt="image41" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_42.jpg" data-large="images/out_42.jpg" alt="image42" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_43.jpg" data-large="images/out_43.jpg" alt="image43" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_44.jpg" data-large="images/out_44.jpg" alt="image44" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_45.jpg" data-large="images/out_45.jpg" alt="image45" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_46.jpg" data-large="images/out_46.jpg" alt="image46" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_47.jpg" data-large="images/out_47.jpg" alt="image47" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_48.jpg" data-large="images/out_48.jpg" alt="image48" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_49.jpg" data-large="images/out_49.jpg" alt="image49" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_50.jpg" data-large="images/out_50.jpg" alt="image50" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_51.jpg" data-large="images/out_51.jpg" alt="image51" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_52.jpg" data-large="images/out_52.jpg" alt="image52" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_53.jpg" data-large="images/out_53.jpg" alt="image53" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_54.jpg" data-large="images/out_54.jpg" alt="image54" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_55.jpg" data-large="images/out_55.jpg" alt="image55" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_56.jpg" data-large="images/out_56.jpg" alt="image56" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_57.jpg" data-large="images/out_57.jpg" alt="image57" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_58.jpg" data-large="images/out_58.jpg" alt="image58" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_59.jpg" data-large="images/out_59.jpg" alt="image59" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_60.jpg" data-large="images/out_60.jpg" alt="image60" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_61.jpg" data-large="images/out_61.jpg" alt="image61" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_62.jpg" data-large="images/out_62.jpg" alt="image62" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_63.jpg" data-large="images/out_63.jpg" alt="image63" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_64.jpg" data-large="images/out_64.jpg" alt="image64" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_65.jpg" data-large="images/out_65.jpg" alt="image65" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_66.jpg" data-large="images/out_66.jpg" alt="image66" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_67.jpg" data-large="images/out_67.jpg" alt="image67" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_68.jpg" data-large="images/out_68.jpg" alt="image68" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_69.jpg" data-large="images/out_69.jpg" alt="image69" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_70.jpg" data-large="images/out_70.jpg" alt="image70" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_71.jpg" data-large="images/out_71.jpg" alt="image71" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_72.jpg" data-large="images/out_72.jpg" alt="image72" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_73.jpg" data-large="images/out_73.jpg" alt="image73" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_74.jpg" data-large="images/out_74.jpg" alt="image74" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_75.jpg" data-large="images/out_75.jpg" alt="image75" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_76.jpg" data-large="images/out_76.jpg" alt="image76" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_77.jpg" data-large="images/out_77.jpg" alt="image77" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_78.jpg" data-large="images/out_78.jpg" alt="image78" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_79.jpg" data-large="images/out_79.jpg" alt="image79" data-description="" /></a></li>
+                                            <li><a href="#"><img src="images/out_80.jpg" data-large="images/out_80.jpg" alt="image80" data-description="" /></a></li>
+
+
+</ul>
+                                <!--<button id="LoopyButton" onclick="infiniteLoop()"> Watch Show </button>-->
+							</div>
+						</div>
+						<!-- End Elastislide Carousel Thumbnail Viewer -->
+					</div><!-- rg-thumbs -->
+				</div><!-- rg-gallery -->
+                <div   style="text-align:right">
+ <img src="images/etec_logo300x100.png" style="width:8%" />
+
+                </div>
+                </div><!-- content -->
+		</div><!-- container -->
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery.tmpl.min.js"></script>
+		<script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+		<script type="text/javascript" src="js/jquery.elastislide.js"></script>
+		<script type="text/javascript" src="js/gallery.js"></script>
+    </body>
+</html>
